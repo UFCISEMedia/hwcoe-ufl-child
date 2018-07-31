@@ -1,1 +1,2 @@
 # hwcoe-ufl-child
+#This is the child theme for the hwcoe-ufl theme provided by the Herbert Wertheim College of Engineering. This theme has specific modifications that pertain to the UF Department of Computer & Information Science & Engineering. 
