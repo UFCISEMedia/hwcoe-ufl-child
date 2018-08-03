@@ -21,7 +21,7 @@ get_header(); ?>
   <div class="col-md-9">
     <?php 
 	  global $wp_query;
-	  $args = array_merge( $wp_query->query, array( 'category_name' => 'news' ) );
+	  $args = array_merge( $wp_query->query, array( 'cat' => '-67' ) );
 	  query_posts( $args );
 
 		while ( have_posts() ) : the_post();
