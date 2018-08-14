@@ -34,28 +34,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'page' );
 		endwhile; // End of the loop. 
 	?>
-	<?php	  
-		// check if the repeater field has rows of data
-		if( have_rows('shaded_block_text') ):
-
-		// loop through the rows of data
-		while ( have_rows('shaded_block_text') ) : the_row();
-	 ?>
-	  <div class="shaded_block_text">
-		  <?php
-			// display a sub field value
-			the_sub_field('centers-lab-content');
-		  ?>
-	  </div>
-	 <?php
-		endwhile;
-
-		else :
-
-		// no rows found
-
-		endif; 
-	?>
   </div>
   
   <?php get_sidebar('page_right'); ?> 
