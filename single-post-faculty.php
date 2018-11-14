@@ -15,10 +15,11 @@ get_header(); ?>
 	  <div class="row">
 		<div class="col-md-3">
 			<?php 
-				if(get_field('faculty_photo_thumb')){ //if the field is not empty
-					echo '<p>' . get_field('faculty_photo_thumb') . '</p>'; //display it
-				} 
+				$image    = get_field( 'faculty_portrait' );
+				$alt      = $image['alt'];
+				$img_src  = $image['sizes']['large'];
 			?>
+			<p><img src="<?php echo $img_src; ?>" alt="<?php echo $alt; ?>" class="img-full"></p>
 		</div>
 		<div class="col-md-9">
 			<?php 
@@ -43,6 +44,7 @@ get_header(); ?>
 						echo '<h3>Primary Research Area</h3><p>' . get_field('faculty_primary_research_area') . '</p>'; //display it
 					} 
 
+			  		//Research areas needs these three units because it is a list of selections
 					if(get_field('faculty_research_areas')){ //if the field is not empty
 						echo '<h3>Research Areas</h3><p>'; //display it
 					} 
@@ -53,6 +55,11 @@ get_header(); ?>
 			  		if(get_field('faculty_research_areas')){ //if the field is not empty
 						echo '</p>'; //display it
 					} 
+			  
+					if(get_field('faculty_current_courses')){ //if the field is not empty
+						echo '<h3>Current Courses</h3><p>' . get_field('faculty_current_courses') . '</p>'; //display it
+					} 
+
 					if(get_field('faculty_education')){ //if the field is not empty
 						echo '<h3>Education</h3><p>' . get_field('faculty_education') . '</p>'; //display it
 					} 
