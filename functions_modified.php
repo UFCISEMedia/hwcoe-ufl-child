@@ -100,18 +100,11 @@ function hwcoe_ufl_scripts() {
 	wp_enqueue_style( 'prettyPhoto', get_stylesheet_directory_uri() . '/inc/prettyPhoto/css/prettyPhoto.css', array(), null );
 	wp_enqueue_script('prettyPhoto', get_stylesheet_directory_uri() . '/inc/prettyPhoto/js/jquery.prettyPhoto.js', array('jquery'), null, true);
 	
-	//Datatables styles -- added by Allison
-	wp_enqueue_style( 'datatables-styles', get_stylesheet_directory_uri() . '/css/datatables.min.css' );
-	
 	// Theme
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), null );
 	wp_enqueue_script('hwcoe-ufl-plugins', get_stylesheet_directory_uri() . '/js/plugins.min.js', array('jquery'), null, true);
 	wp_enqueue_script('hwcoe-ufl-scripts', get_stylesheet_directory_uri() . '/js/scripts.min.js', array(), null, true);
 	
-	//Datatables scripts -- added by Allison
-	wp_enqueue_script( 'hwcoesyllabi', get_stylesheet_directory_uri() . '/js/hwcoesyllabi.js');
-	wp_enqueue_script( 'datatables', get_stylesheet_directory_uri() . '/js/datatables.min.js');
-
 	// Pass site data to Javascript
 	$site_data = array(
 		'home_url' => home_url('/'),

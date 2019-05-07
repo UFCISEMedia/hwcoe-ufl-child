@@ -65,7 +65,7 @@
 				</div>
 			<?php endwhile // the_row ?>
 		<?php endif // have_rows ?>
-	</div>	<!--Featured Stories-->
+	</div>	<!--End Featured Stories-->
 	
 	<div><!--Stories-->
 		<!--Department Stories-->
@@ -169,7 +169,33 @@
 				</div>
 			<?php endwhile // the_row ?>
 		<?php endif // have_rows ?>
-	 </div><!--Stories-->
+
+		<!--Digital Newsletter Stories-->
+		<?php if( have_rows( 'nl_pg_digital' ) ): ?>
+			<?php while( have_rows( 'nl_pg_digital' ) ): the_row(); ?>
+				<?php
+					$imageArray  = get_sub_field( 'nl_pg_digital_image' );
+					$imageAlt    = esc_attr($imageArray['alt']);
+					$image       = esc_url($imageArray['sizes']['large']);
+				?>
+				<div class="nl-digital-story">
+					<?php if(get_sub_field('nl_pg_digital_image')){ //if the field is not empty
+					echo '<img src="' . $image . '" alt="' . $imageAlt . '">'; //display it
+					} ?>
+					<?php if(get_sub_field('nl_pg_digital_title')){ //if the field is not empty
+					echo '<h3>' . get_sub_field('nl_pg_digital_title') . '</h3>'; //display it
+					} ?>
+					<?php if(get_sub_field('nl_pg_digital_excerpt')){ //if the field is not empty
+					echo '<p>' . get_sub_field('nl_pg_digital_excerpt') . '</p>'; //display it
+					} ?>
+					<?php if(get_sub_field('nl_pg_digital_story_link')){ //if the field is not empty
+					echo '<p><a href="' . get_sub_field('nl_pg_digital_story_link') . '" target="_blank">Read more >>></a></p>'; //display it
+					} ?>	
+				</div>
+			<?php endwhile // the_row ?>
+		<?php endif // have_rows ?>
+	
+	</div><!--End Stories-->
 	
 	
 	<div class="entry-meta">
